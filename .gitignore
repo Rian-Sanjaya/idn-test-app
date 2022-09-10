@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+node_modules
+.next
+
 # testing
 /coverage
 
@@ -34,3 +37,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# environment variables
+.env
+.env.*
+!.env.example
+
+.DS_Store
+yarn.lock

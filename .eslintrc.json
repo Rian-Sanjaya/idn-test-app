@@ -1,3 +1,8 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+    "node": true,
+    "browser": true,
+    "amd": true
+  },
+  "extends": ["next/core-web-vitals", "prettier"]
 }
