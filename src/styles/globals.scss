@@ -1,3 +1,11 @@
+// $theme-colors: (
+//   "primary": #145b12,
+// );
+
+// $primary: rgb(0, 19, 23);
+
+@import '/node_modules/bootstrap/scss/bootstrap.scss';
+
 html,
 body {
   padding: 0;
