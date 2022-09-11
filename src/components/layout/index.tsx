@@ -10,9 +10,7 @@ const Layout = ({ children }: Props) => {
   return (
     <>
       <Header />
-      {/* <Container> */}
-        <main>{ children }</main>
-      {/* </Container> */}
+      <main>{ children }</main>
     </>
   )
 }

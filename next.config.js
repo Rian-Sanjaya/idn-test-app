@@ -8,7 +8,7 @@ const nextConfig = {
     includePaths: [path.join(__dirname, "styles")],
   },
   images: {
-    domains: ['cloudflare-ipfs.com'],
+    domains: ['cloudflare-ipfs.com', "loremflickr.com"],
   },
 };
 

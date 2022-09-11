@@ -12,3 +12,7 @@ export const firstWordsToUpperCase = (string: string = "") => {
 
   return result;
 };
+
+export const truncateString = (string: string, num: number) => {
+  return (string.length > 65) ? string.slice(0, num) + '...' : string;
+}
