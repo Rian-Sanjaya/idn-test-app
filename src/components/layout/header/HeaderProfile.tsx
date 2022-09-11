@@ -1,11 +1,11 @@
 import { profile } from "console";
 import Image from "next/image";
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import styles from "../../../styles/layout/header/HeaderProfile.module.scss";
 
 interface ProfileDataInterface {
-  id: string,
-  avatar: string,
+  id: string;
+  avatar: string;
   firstName: string;
   lastName: string;
   jobType: string;
@@ -14,16 +14,15 @@ interface ProfileDataInterface {
 }
 
 const HeaderProfile = () => {
-  const [profileData, setProfileData] = 
-    useState<ProfileDataInterface>({
-      id: "", 
-      avatar: "",
-      firstName: "",
-      lastName: "",
-      jobType: "",
-      following: "",
-      followers: "",
-    });
+  const [profileData, setProfileData] = useState<ProfileDataInterface>({
+    id: "",
+    avatar: "",
+    firstName: "",
+    lastName: "",
+    jobType: "",
+    following: "",
+    followers: "",
+  });
   const [loading, setLoading] = useState(false);
 
   // have to use CSR data fetching
@@ -39,7 +38,7 @@ const HeaderProfile = () => {
       })
       .catch((err) => {
         console.error("Error: ", err);
-      })
+      });
   }, []);
 
   return (
@@ -47,21 +46,34 @@ const HeaderProfile = () => {
       <div className={styles.card}>
         <div></div>
         <div className={styles.profile}>
-          {
-            !loading &&
+          {!loading && (
             <>
-              <div className={styles.avatar_box}> 
-                <Image className={styles.avatar} src={profileData?.avatar} alt="Profile avatar" width={80} height={80} />
+              <div className={styles.avatar_box}>
+                <Image
+                  className={styles.avatar}
+                  src={profileData?.avatar}
+                  alt="Profile avatar"
+                  width={80}
+                  height={80}
+                />
               </div>
               <div className={styles.detail}>
                 <div>
-                  <div className={`text_label ${styles.text_label}`}>{profileData.jobType}</div>
-                  <div className={`text_content ${styles.text_content}`}>{`${profileData.firstName} ${profileData.lastName}`}</div>
+                  <div className={`text_label ${styles.text_label}`}>
+                    {profileData.jobType}
+                  </div>
+                  <div
+                    className={`text_content ${styles.text_content}`}
+                  >{`${profileData.firstName} ${profileData.lastName}`}</div>
                 </div>
                 <div className={styles.follow}>
                   <div style={{ marginRight: "40px" }}>
-                    <div className={`text_label ${styles.text_label}`}>Following</div>
-                    <div className={`text_content ${styles.text_content}`}>{profileData.following}</div>
+                    <div className={`text_label ${styles.text_label}`}>
+                      Following
+                    </div>
+                    <div className={`text_content ${styles.text_content}`}>
+                      {profileData.following}
+                    </div>
                   </div>
                   <div>
                     <div className="text_label">Folowwers</div>
@@ -70,17 +82,20 @@ const HeaderProfile = () => {
                 </div>
               </div>
             </>
-          }
+          )}
         </div>
         <div className={styles.description}>
-          Yuk follow aku biar kita streaming game bareng setiap hari senin & jumat jam 10 AM - 3 PM. Jangan lupa follow IG aku juga ya @{profileData.firstName.slice(0, 3)}_{profileData.lastName.slice(0, 3).toLowerCase()}
+          Yuk follow aku biar kita streaming game bareng setiap hari senin &
+          jumat jam 10 AM - 3 PM. Jangan lupa follow IG aku juga ya @
+          {profileData.firstName.slice(0, 3)}_
+          {profileData.lastName.slice(0, 3).toLowerCase()}
         </div>
         <div className={styles.btn_follow_box}>
           <button className={styles.btn_follow}>Follow</button>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default HeaderProfile;
