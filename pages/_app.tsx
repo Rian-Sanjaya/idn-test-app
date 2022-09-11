@@ -6,12 +6,12 @@ import "../src/styles/globals.scss";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Layout>
-        <Head>
-            <title>Enola News</title>
-            <meta name="description" content="Enola news" />
-            <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <Component {...pageProps} />
+      <Head>
+        <title>Enola News</title>
+        <meta name="description" content="Enola news" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Component {...pageProps} />
     </Layout>
   );
 }

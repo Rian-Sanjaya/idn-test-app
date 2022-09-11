@@ -3,16 +3,16 @@ import { Container } from "react-bootstrap";
 import Header from "./header/index";
 
 type Props = {
-  children?: React.ReactNode,
+  children?: React.ReactNode;
 };
 
 const Layout = ({ children }: Props) => {
   return (
     <>
       <Header />
-      <main>{ children }</main>
+      <main>{children}</main>
     </>
-  )
-}
+  );
+};
 
 export default Layout;

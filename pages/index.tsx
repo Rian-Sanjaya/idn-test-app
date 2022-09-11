@@ -6,11 +6,9 @@ const Home = () => {
 
   useEffect(() => {
     router.push("/news");
-  }, [router])
+  }, [router]);
 
-  return (
-    <></>
-  );
+  return <></>;
 };
 
 export default Home;

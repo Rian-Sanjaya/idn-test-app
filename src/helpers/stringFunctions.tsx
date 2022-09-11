@@ -5,14 +5,14 @@ export const firstLetterToUpperCase = (string: string) => {
 export const firstWordsToUpperCase = (string: string = "") => {
   const arrStr = string.split(" ");
   const result = arrStr
-      .map((word) => {
-          return firstLetterToUpperCase(word);
-      })
-      .join("");
+    .map((word) => {
+      return firstLetterToUpperCase(word);
+    })
+    .join("");
 
   return result;
 };
 
 export const truncateString = (string: string, num: number) => {
-  return (string.length > 65) ? string.slice(0, num) + '...' : string;
-}
+  return string.length > 65 ? string.slice(0, num) + "..." : string;
+};

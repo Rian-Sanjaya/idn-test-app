@@ -1,5 +1,5 @@
 // import type { GetServerSideProps } from "next";
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 import moment from "moment";
 import Image from "next/image";
 import { truncateString } from "../../src/helpers/stringFunctions";
@@ -14,8 +14,8 @@ type Data = {
 };
 
 type Props = {
-  data: Array<Data>
-}
+  data: Array<Data>;
+};
 
 // if using SSR
 // const NewsPage = ({ data }: Props) => {
@@ -34,7 +34,7 @@ const NewsPage = () => {
       })
       .catch((err) => {
         console.error("Error: ", err);
-      })
+      });
   }, []);
 
   // using SSR for fetching data
@@ -46,34 +46,50 @@ const NewsPage = () => {
   return (
     <div className={styles.container}>
       <div className={styles.main_content}>
-        {
-          newsData && newsData.length > 0 &&
+        {newsData &&
+          newsData.length > 0 &&
           newsData.map((news) => (
             <div key={news.id} className={styles.card}>
               <div className={styles.headline_news}>
                 <div>
-                  <div className={`text_label`} style={{ marginBottom: '8px' }}>{moment(news.date).format("DD MMMM YYYY, hh:mm")}</div>
-                  <div className={`text_content`}>{truncateString(news.headlineText, 65)}</div>
+                  <div className={`text_label`} style={{ marginBottom: "8px" }}>
+                    {moment(news.date).format("DD MMMM YYYY, hh:mm")}
+                  </div>
+                  <div className={`text_content`}>
+                    {truncateString(news.headlineText, 65)}
+                  </div>
                 </div>
                 <div className={styles.image_box}>
-                  <Image className={styles.image_main} src={news.image} alt="Headline Picture" width={112} height={84} style={{ width: '112px', height: '84px' }} />
+                  <Image
+                    className={styles.image_main}
+                    src={news.image}
+                    alt="Headline Picture"
+                    width={112}
+                    height={84}
+                    style={{ width: "112px", height: "84px" }}
+                  />
                   <div className={styles.logo_box}>
-                    <img className={styles.logo_main} src={`/images/logo_idntimes.png`} alt="IDN Times Logo" />
+                    <img
+                      className={styles.logo_main}
+                      src={`/images/logo_idntimes.png`}
+                      alt="IDN Times Logo"
+                    />
                   </div>
                 </div>
               </div>
               <div className={styles.footer_box}>
                 <div className={styles.footer}>
-                  <div className={`text_label ${styles.text_label}`}>{news.category}</div>
+                  <div className={`text_label ${styles.text_label}`}>
+                    {news.category}
+                  </div>
                 </div>
               </div>
             </div>
-          ))
-        }
+          ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
 // export const getServerSideProps: GetServerSideProps<Props> = async () => {
 //   const res = await fetch(`http://localhost:3000/api/news`);

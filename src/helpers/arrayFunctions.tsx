@@ -1,6 +1,6 @@
 export const getRandomArray = (arr: Array<any>) => {
   return arr[Math.floor(Math.random() * arr.length)];
-}
+};
 
 export const shuffleArray = (array: Array<any>) => {
   for (let i = array.length - 1; i > 0; i--) {
@@ -9,4 +9,4 @@ export const shuffleArray = (array: Array<any>) => {
     array[i] = array[j];
     array[j] = temp;
   }
-}
+};

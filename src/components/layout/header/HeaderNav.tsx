@@ -13,21 +13,33 @@ const HeaderNav: NextPage = () => {
           <ul className={styles.nav}>
             <li>
               <Link href="/news">
-                <a className={`${router.asPath === '/news' ? styles.active : ''}`}>
+                <a
+                  className={`${
+                    router.asPath === "/news" ? styles.active : ""
+                  }`}
+                >
                   Berita
                 </a>
               </Link>
             </li>
             <li>
               <Link href="/livestream">
-                <a className={`${router.asPath === '/livestream' ? styles.active : ''}`}>
+                <a
+                  className={`${
+                    router.asPath === "/livestream" ? styles.active : ""
+                  }`}
+                >
                   Livestream
                 </a>
               </Link>
             </li>
             <li>
               <Link href="/quiz">
-                <a className={`${router.asPath === '/quiz' ? styles.active : ''}`}>
+                <a
+                  className={`${
+                    router.asPath === "/quiz" ? styles.active : ""
+                  }`}
+                >
                   Quiz
                 </a>
               </Link>
@@ -36,7 +48,7 @@ const HeaderNav: NextPage = () => {
         </nav>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default HeaderNav;

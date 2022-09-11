@@ -24,7 +24,8 @@ const mockData = [
   {
     id: faker.datatype.uuid(),
     date: faker.date.recent(1),
-    headlineText: "Salip Astra, Kapitalisasi Pasar Bank Jago Merangsek Ke Lima Besar Dalam",
+    headlineText:
+      "Salip Astra, Kapitalisasi Pasar Bank Jago Merangsek Ke Lima Besar Dalam",
     category: getRandomArray(categories),
     image: faker.image.abstract(112, 84),
   },
@@ -38,18 +39,20 @@ const mockData = [
   {
     id: faker.datatype.uuid(),
     date: faker.date.recent(1),
-    headlineText: "Ini 3 Tema Ekonomi Digital yang Diusung di G20 Presidensi Indonesia",
+    headlineText:
+      "Ini 3 Tema Ekonomi Digital yang Diusung di G20 Presidensi Indonesia",
     category: getRandomArray(categories),
     image: faker.image.fashion(112, 84),
   },
   {
     id: faker.datatype.uuid(),
     date: faker.date.recent(1),
-    headlineText: "Panggil Para Dewa, Umat Tionghoa Terbangkan Uang Arwah di Gedung Rasa Dalam",
+    headlineText:
+      "Panggil Para Dewa, Umat Tionghoa Terbangkan Uang Arwah di Gedung Rasa Dalam",
     category: getRandomArray(categories),
     image: faker.image.food(112, 84),
   },
-]
+];
 
 shuffleArray(mockData);
 
@@ -59,16 +62,16 @@ for (let i = 0; i < 5; i++) {
     date: faker.date.recent(1),
     headlineText: faker.lorem.sentence(),
     category: getRandomArray(categories),
-    image: i === 0 
-      ? faker.image.image(112, 84) 
-      : i === 1 
+    image:
+      i === 0
+        ? faker.image.image(112, 84)
+        : i === 1
         ? faker.image.nature(112, 84)
         : i === 2
-          ? faker.image.nightlife(112, 84)
-          : i === 3 
-            ? faker.image.sports(112, 84)
-            : faker.image.technics(112, 84)
-        ,
+        ? faker.image.nightlife(112, 84)
+        : i === 3
+        ? faker.image.sports(112, 84)
+        : faker.image.technics(112, 84),
   });
 }
 

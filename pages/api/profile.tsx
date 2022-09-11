@@ -22,8 +22,8 @@ export default function handler(
     firstName: faker.name.firstName(),
     lastName: faker.name.lastName(),
     jobType: faker.name.jobType(),
-    following: faker.finance.amount(1, 9999, 0, '', true),
-    followers: faker.finance.amount(1, 9999, 0, '', true),
-  }
+    following: faker.finance.amount(1, 9999, 0, "", true),
+    followers: faker.finance.amount(1, 9999, 0, "", true),
+  };
   res.status(200).json(profile);
 }
