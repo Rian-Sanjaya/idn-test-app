@@ -17,6 +17,7 @@ const HeaderNav: NextPage = () => {
                   className={`${
                     router.asPath === "/news" ? styles.active : ""
                   }`}
+                  data-testid="tab-berita"
                 >
                   Berita
                 </a>
@@ -28,6 +29,7 @@ const HeaderNav: NextPage = () => {
                   className={`${
                     router.asPath === "/livestream" ? styles.active : ""
                   }`}
+                  data-testid="tab-livestream"
                 >
                   Livestream
                 </a>
@@ -39,6 +41,7 @@ const HeaderNav: NextPage = () => {
                   className={`${
                     router.asPath === "/quiz" ? styles.active : ""
                   }`}
+                  data-testid="tab-quiz"
                 >
                   Quiz
                 </a>

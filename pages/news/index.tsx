@@ -41,7 +41,6 @@ const NewsPage = ({ data }: Props) => {
 
   // using SSR for fetching data
   useEffect(() => {
-    console.log("data dalem: ", data);
     setNewsData(data);
   }, [data]);
 
@@ -73,10 +72,10 @@ const NewsPage = ({ data }: Props) => {
             <div key={news.id} className={styles.card}>
               <div className={styles.headline_news}>
                 <div>
-                  <div className={`text_label`} style={{ marginBottom: "8px" }}>
+                  <div className={`text_label`} style={{ marginBottom: "8px" }} data-testid="article-date">
                     {moment(news.date).format("DD MMMM YYYY, hh:mm")}
                   </div>
-                  <div className={`text_content`}>
+                  <div className={`text_content`} data-testid="article-headline">
                     {truncateString(news.headlineText, 65)}
                   </div>
                 </div>
@@ -87,12 +86,14 @@ const NewsPage = ({ data }: Props) => {
                     alt="Headline Picture"
                     width={112}
                     height={84}
+                    data-testid="article-picture"
                   />
                   <div className={styles.logo_box}>
                     <img
                       className={styles.logo_main}
                       src={`/images/logo_idntimes.png`}
                       alt="IDN Times Logo"
+                      data-testid="idnnews-logo"
                     />
                   </div>
                 </div>
