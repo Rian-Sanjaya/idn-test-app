@@ -32,8 +32,7 @@ const QuizPage = () => {
     <div className={styles.container}>
       <div className={styles.main_content}>
         <div className={styles.grid}>
-          {
-            (!quizData || quizData.length === 0) && 
+          {(!quizData || quizData.length === 0) && (
             <>
               <div className={styles.flex_card}>
                 <Skeleton height={226} />
@@ -72,24 +71,41 @@ const QuizPage = () => {
                 <Skeleton count={2} />
               </div>
             </>
-          }
-          {
-            quizData && quizData.length > 0 && 
+          )}
+          {quizData &&
+            quizData.length > 0 &&
             quizData.map((quiz) => (
               <div key={quiz.id} className={styles.card}>
                 <div className={styles.card_content}>
                   <div className={styles.image_box}>
-                    <img className={styles.image_main} src={quiz.image} alt="quiz picture" />
+                    <img
+                      className={styles.image_main}
+                      src={quiz.image}
+                      alt="quiz picture"
+                    />
                   </div>
-                  <div className={`text_label`} style={{ marginTop: "12px", marginBottom: "8px", fontSize: '12px' }}>{quiz.category}</div>
+                  <div
+                    className={`text_label`}
+                    style={{
+                      marginTop: "12px",
+                      marginBottom: "8px",
+                      fontSize: "12px",
+                    }}
+                  >
+                    {quiz.category}
+                  </div>
                   <div className={`text_content`}>
-                    { truncateString(quiz.headlineText, 42) }
+                    {truncateString(quiz.headlineText, 42)}
                   </div>
-                  <div className={`text_label`} style={{ marginTop: "8px" }}><span style={{ fontWeight: "700" }}>{quiz.plays}</span> plays</div>
+                  <div className={`text_label`} style={{ marginTop: "8px" }}>
+                    <span style={{ fontWeight: "900", fontSize: "12px" }}>
+                      {quiz.plays}
+                    </span>{" "}
+                    plays
+                  </div>
                 </div>
               </div>
-            ))
-          }
+            ))}
         </div>
       </div>
     </div>

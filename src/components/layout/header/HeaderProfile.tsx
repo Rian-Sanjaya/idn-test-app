@@ -47,8 +47,12 @@ const HeaderProfile = () => {
     <div className={styles.container}>
       <div className={styles.card}>
         <div className={styles.share_box}>
-          <div className={styles.chevron_left}><FontAwesomeIcon icon={faChevronLeft} /></div>
-          <div className={styles.share_nodes}><FontAwesomeIcon icon={faShareNodes} /></div>
+          <div className={styles.chevron_left}>
+            <FontAwesomeIcon icon={faChevronLeft} />
+          </div>
+          <div className={styles.share_nodes}>
+            <FontAwesomeIcon icon={faShareNodes} />
+          </div>
         </div>
         <div className={styles.profile}>
           {!loading && (

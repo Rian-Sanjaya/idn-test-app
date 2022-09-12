@@ -41,15 +41,14 @@ const NewsPage = ({ data }: Props) => {
 
   // using SSR for fetching data
   useEffect(() => {
-    console.log('data dalem: ', data);
+    console.log("data dalem: ", data);
     setNewsData(data);
   }, [data]);
 
   return (
     <div className={styles.container}>
       <div className={styles.main_content}>
-        {
-          (!newsData || newsData.length === 0) && 
+        {(!newsData || newsData.length === 0) && (
           <div className={styles.card}>
             <div style={{ marginBottom: "24px" }}>
               <Skeleton count={3} />
@@ -67,7 +66,7 @@ const NewsPage = ({ data }: Props) => {
               <Skeleton count={3} />
             </div>
           </div>
-        }
+        )}
         {newsData &&
           newsData.length > 0 &&
           newsData.map((news) => (
@@ -103,7 +102,14 @@ const NewsPage = ({ data }: Props) => {
                   <div className={`text_label ${styles.text_label}`}>
                     {news.category}
                   </div>
-                  <div className={`text_label`} style={{ fontSize: "16px", color: "#14171A", cursor: "pointer" }}>
+                  <div
+                    className={`text_label`}
+                    style={{
+                      fontSize: "16px",
+                      color: "#14171A",
+                      cursor: "pointer",
+                    }}
+                  >
                     <FontAwesomeIcon icon={faShareNodes} />
                   </div>
                 </div>
@@ -119,6 +125,6 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
   const res = await fetch(`http://localhost:3000/api/news`);
   const data = await res.json();
   return { props: { data } };
-}
+};
 
 export default NewsPage;
