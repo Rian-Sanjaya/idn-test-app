@@ -19,6 +19,11 @@
       flex-wrap: wrap;
       justify-content: space-between;
 
+      .flex_card {
+        flex-basis: 49%;
+        margin-bottom: 16px;
+      }
+
       .card {
         padding: 12px;
         min-width: 155px;
@@ -119,6 +124,10 @@
   .container {
     .main_content{
       .grid {
+        .flex_card {
+          flex-basis: 31.5%;
+        }
+
         .card {
           flex-basis: 31.5%;
         }

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
+import Skeleton from "react-loading-skeleton";
 import styles from "../../src/styles/Livestream.module.scss";
 
 type Data = {
@@ -32,6 +33,38 @@ const LivestreamPage = () => {
     <div className={styles.container}>
       <div className={styles.main_content}>
         <div className={styles.grid}>
+          {
+            (!livestreamData || livestreamData.length === 0 ) && 
+            <>
+              <div className={styles.flex_card}>
+                <Skeleton height={230} />
+              </div>
+              <div className={styles.flex_card}>
+                <Skeleton height={230} />
+              </div>
+              <div className={styles.flex_card}>
+                <Skeleton height={230} />
+              </div>
+              <div className={styles.flex_card}>
+                <Skeleton height={230} />
+              </div>
+              <div className={styles.flex_card}>
+                <Skeleton height={230} />
+              </div>
+              <div className={styles.flex_card}>
+                <Skeleton height={230} />
+              </div>
+              <div className={styles.flex_card}>
+                <Skeleton height={230} />
+              </div>
+              <div className={styles.flex_card}>
+                <Skeleton height={230} />
+              </div>
+              <div className={styles.flex_card}>
+                <Skeleton height={230} />
+              </div>
+            </>
+          }
           {
             livestreamData && livestreamData.length > 0 && 
             livestreamData.map((livestream, i) => (

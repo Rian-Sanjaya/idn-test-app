@@ -3,7 +3,8 @@ import Head from "next/head";
 import { config } from '@fortawesome/fontawesome-svg-core'
 import Layout from "../src/components/layout";
 import "../src/styles/globals.scss";
-import '../node_modules/@fortawesome/fontawesome-svg-core/styles.css'
+import '../node_modules/@fortawesome/fontawesome-svg-core/styles.css';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 config.autoAddCss = false
 

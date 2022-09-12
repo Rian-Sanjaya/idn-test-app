@@ -1,9 +1,10 @@
-// import type { GetServerSideProps } from "next";
+import type { GetServerSideProps } from "next";
 import { useEffect, useState } from "react";
 import moment from "moment";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareNodes } from "@fortawesome/free-solid-svg-icons";
+import Skeleton from "react-loading-skeleton";
 import { truncateString } from "../../src/helpers/stringFunctions";
 import styles from "../../src/styles/News.module.scss";
 
@@ -15,39 +16,58 @@ type Data = {
   image: string;
 };
 
-// type Props = {
-//   data: Array<Data>;
-// };
+type Props = {
+  data: Array<Data>;
+};
 
 // if using SSR
-// const NewsPage = ({ data }: Props) => {
-const NewsPage = () => {
+const NewsPage = ({ data }: Props) => {
   const [newsData, setNewsData] = useState<Array<Data>>();
   const [loading, setLoading] = useState(false);
 
   // using CSR for fetching data
-  useEffect(() => {
-    setLoading(true);
-    fetch(`http://localhost:3000/api/news`)
-      .then((res) => res.json())
-      .then((data) => {
-        setNewsData(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("Error: ", err);
-      });
-  }, []);
+  // useEffect(() => {
+  //   setLoading(true);
+  //   fetch(`http://localhost:3000/api/news`)
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setNewsData(data);
+  //       setLoading(false);
+  //     })
+  //     .catch((err) => {
+  //       console.error("Error: ", err);
+  //     });
+  // }, []);
 
   // using SSR for fetching data
-  // useEffect(() => {
-  //   console.log('data dalem: ', data);
-  //   setNewsData(data);
-  // }, [data]);
+  useEffect(() => {
+    console.log('data dalem: ', data);
+    setNewsData(data);
+  }, [data]);
 
   return (
     <div className={styles.container}>
       <div className={styles.main_content}>
+        {
+          (!newsData || newsData.length === 0) && 
+          <div className={styles.card}>
+            <div style={{ marginBottom: "24px" }}>
+              <Skeleton count={3} />
+            </div>
+            <div style={{ marginBottom: "24px" }}>
+              <Skeleton count={3} />
+            </div>
+            <div style={{ marginBottom: "24px" }}>
+              <Skeleton count={3} />
+            </div>
+            <div style={{ marginBottom: "24px" }}>
+              <Skeleton count={3} />
+            </div>
+            <div style={{ marginBottom: "24px" }}>
+              <Skeleton count={3} />
+            </div>
+          </div>
+        }
         {newsData &&
           newsData.length > 0 &&
           newsData.map((news) => (
@@ -95,10 +115,10 @@ const NewsPage = () => {
   );
 };
 
-// export const getServerSideProps: GetServerSideProps<Props> = async () => {
-//   const res = await fetch(`http://localhost:3000/api/news`);
-//   const data = await res.json();
-//   return { props: { data } };
-// }
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
+  const res = await fetch(`http://localhost:3000/api/news`);
+  const data = await res.json();
+  return { props: { data } };
+}
 
 export default NewsPage;

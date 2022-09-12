@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Skeleton from "react-loading-skeleton";
 import { truncateString } from "../../src/helpers/stringFunctions";
 import styles from "../../src/styles/Quiz.module.scss";
 
@@ -31,6 +32,47 @@ const QuizPage = () => {
     <div className={styles.container}>
       <div className={styles.main_content}>
         <div className={styles.grid}>
+          {
+            (!quizData || quizData.length === 0) && 
+            <>
+              <div className={styles.flex_card}>
+                <Skeleton height={226} />
+                <Skeleton count={2} />
+              </div>
+              <div className={styles.flex_card}>
+                <Skeleton height={226} />
+                <Skeleton count={2} />
+              </div>
+              <div className={styles.flex_card}>
+                <Skeleton height={226} />
+                <Skeleton count={2} />
+              </div>
+              <div className={styles.flex_card}>
+                <Skeleton height={226} />
+                <Skeleton count={2} />
+              </div>
+              <div className={styles.flex_card}>
+                <Skeleton height={226} />
+                <Skeleton count={2} />
+              </div>
+              <div className={styles.flex_card}>
+                <Skeleton height={226} />
+                <Skeleton count={2} />
+              </div>
+              <div className={styles.flex_card}>
+                <Skeleton height={226} />
+                <Skeleton count={2} />
+              </div>
+              <div className={styles.flex_card}>
+                <Skeleton height={226} />
+                <Skeleton count={2} />
+              </div>
+              <div className={styles.flex_card}>
+                <Skeleton height={226} />
+                <Skeleton count={2} />
+              </div>
+            </>
+          }
           {
             quizData && quizData.length > 0 && 
             quizData.map((quiz) => (
