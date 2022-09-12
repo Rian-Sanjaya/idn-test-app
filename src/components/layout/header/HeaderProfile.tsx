@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faShareNodes } from "@fortawesome/free-solid-svg-icons";
+import { baseUrl } from "../../../helpers/config";
 import styles from "../../../styles/layout/header/HeaderProfile.module.scss";
 
 interface ProfileDataInterface {
@@ -32,7 +33,7 @@ const HeaderProfile = () => {
   // source: https://nextjs.org/docs/basic-features/layouts
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:3000/api/profile`)
+    fetch(`${baseUrl}/api/profile`)
       .then((res) => res.json())
       .then((data) => {
         setProfileData(data);
