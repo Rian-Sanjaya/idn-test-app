@@ -1,5 +1,5 @@
 .container {
-  margin-top: 336.16px;
+  margin-top: 385.16px;
   padding-top: 23px;
   display: flex;
   justify-content: center;
@@ -18,6 +18,11 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+
+      .flex_card {
+        flex-basis: 48%;
+        margin-bottom: 16px;
+      }
 
       .card {
         padding: 12px;
@@ -53,6 +58,10 @@
   .container {
     .main_content{
       .grid {
+        .flex_card {
+          flex-basis: 31.33%;
+        }
+
         .card {
           flex-basis: 33.33%;
         }

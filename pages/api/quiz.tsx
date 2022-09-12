@@ -11,9 +11,9 @@ type Data = {
 };
 
 const headlineText = [
-  "Antara Victor dan Alden MCI 9, Kami Tahu Siapa yang Naksir", 
-  "Dari Cita-cita Masa Kecil, Kami Tahu Apa Rahasia Terdalammu", 
-  "Kuis Gambar Ini Bisa Ungkap Apa Ranah Profesimu", 
+  "Antara Victor dan Alden MCI 9, Kami Tahu Siapa yang Naksir",
+  "Dari Cita-cita Masa Kecil, Kami Tahu Apa Rahasia Terdalammu",
+  "Kuis Gambar Ini Bisa Ungkap Apa Ranah Profesimu",
   "Dari Golongan Darah, Kamu Bakal Jadi Bridesmaid atas",
   "Dari Drama Korea Bae Suzy, Kami Tahu Wisata Honeymoon Mengasikan",
   "Dari Tipe Cowok Idaman, Kami Tahu Member TXT yang akan",
@@ -30,7 +30,7 @@ for (let i = 0; i < 8; i++) {
     headlineText: headlineText[i],
     category: "Education",
     image: faker.image.image(),
-  })
+  });
 }
 
 shuffleArray(mockData);

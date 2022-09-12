@@ -1,6 +1,8 @@
 import { profile } from "console";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronLeft, faShareNodes } from "@fortawesome/free-solid-svg-icons";
 import styles from "../../../styles/layout/header/HeaderProfile.module.scss";
 
 interface ProfileDataInterface {
@@ -44,7 +46,14 @@ const HeaderProfile = () => {
   return (
     <div className={styles.container}>
       <div className={styles.card}>
-        <div></div>
+        <div className={styles.share_box}>
+          <div className={styles.chevron_left}>
+            <FontAwesomeIcon icon={faChevronLeft} />
+          </div>
+          <div className={styles.share_nodes}>
+            <FontAwesomeIcon icon={faShareNodes} />
+          </div>
+        </div>
         <div className={styles.profile}>
           {!loading && (
             <>
