@@ -18,7 +18,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        min-width: 375px;
     
         li {
           margin: 0;
@@ -39,6 +38,10 @@
             font-weight: 700;
             line-height: 160%;
             color: #14171A;
+          }
+
+          a:hover {
+            border:2px solid #FBD2D4
           }
     
           a.active {

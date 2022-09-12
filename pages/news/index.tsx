@@ -13,9 +13,9 @@ type Data = {
   image: string;
 };
 
-type Props = {
-  data: Array<Data>;
-};
+// type Props = {
+//   data: Array<Data>;
+// };
 
 // if using SSR
 // const NewsPage = ({ data }: Props) => {
