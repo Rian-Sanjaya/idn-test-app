@@ -1,5 +1,5 @@
 .container {
-  margin-top: 336.16px;
+  margin-top: 385.16px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,6 +54,7 @@
       .footer_box {
         .footer {
           display: flex;
+          justify-content: space-between;
 
           .text_label {
             font-size: 12px;

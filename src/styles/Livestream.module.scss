@@ -1,5 +1,5 @@
 .container {
-  margin-top: 336.16px;
+  margin-top: 385.16px;
   padding-top: 23px;
   display: flex;
   justify-content: center;
@@ -25,7 +25,7 @@
         flex-basis: 49%;
         height: 230px;
         position: relative;
-        border-radius: 8px;
+        border-radius: 10px;
         margin-bottom: 16px;
         background-position: center center;
         background-repeat: no-repeat;
@@ -34,6 +34,7 @@
         &::before {
           content: "";
           display: block;
+          border-radius: 10px;
           position: absolute;
           top: 0;
           left: 0;
@@ -72,6 +73,14 @@
             background: #ADB1B4;
             border-radius: 6px;
             padding: 4px 8px;
+          }
+
+          .clip_box.terjadwal {
+            background: #FBD2D4;
+          }
+
+          .clip_box.terjadwal .text {
+            color: #ED2227;
           }
         }
 

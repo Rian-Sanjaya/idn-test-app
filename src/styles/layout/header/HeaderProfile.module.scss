@@ -12,6 +12,16 @@
     background: #fff;
     border-bottom: 1px solid #E5E9EC;
 
+    .share_box {
+      display: flex;
+      justify-content: space-between;
+      color: #14171A;
+      margin-bottom: 22px;
+
+      .chevron_left { cursor: pointer; }
+      .share_nodes { cursor: pointer; font-size: 18px; }
+    }
+
     .profile {
       display: flex;
 

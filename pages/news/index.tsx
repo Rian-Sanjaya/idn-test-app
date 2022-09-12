@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 import moment from "moment";
 import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShareNodes } from "@fortawesome/free-solid-svg-icons";
 import { truncateString } from "../../src/helpers/stringFunctions";
 import styles from "../../src/styles/News.module.scss";
 
@@ -66,7 +68,6 @@ const NewsPage = () => {
                     alt="Headline Picture"
                     width={112}
                     height={84}
-                    style={{ width: "112px", height: "84px" }}
                   />
                   <div className={styles.logo_box}>
                     <img
@@ -81,6 +82,9 @@ const NewsPage = () => {
                 <div className={styles.footer}>
                   <div className={`text_label ${styles.text_label}`}>
                     {news.category}
+                  </div>
+                  <div className={`text_label`} style={{ fontSize: "16px", color: "#14171A", cursor: "pointer" }}>
+                    <FontAwesomeIcon icon={faShareNodes} />
                   </div>
                 </div>
               </div>
