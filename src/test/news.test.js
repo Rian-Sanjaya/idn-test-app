@@ -11,6 +11,6 @@ describe("NewsPage", () => {
       expect(screen.getByTestId("article-headline")).toBeInTheDocument();
       expect(screen.getByTestId("article-picture")).toBeInTheDocument();
       expect(screen.getByTestId("idnnews-logo")).toBeInTheDocument();
-    }, 5000)
+    }, 5000);
   });
 });
