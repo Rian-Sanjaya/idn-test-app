@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
 import { truncateString } from "../../src/helpers/stringFunctions";
+import { baseUrl } from "../../src/helpers/config";
 import styles from "../../src/styles/Quiz.module.scss";
 
 type Data = {
@@ -17,7 +18,7 @@ const QuizPage = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:3000/api/quiz`)
+    fetch(`${baseUrl}/api/quiz`)
       .then((res) => res.json())
       .then((data) => {
         setQuizData(data);

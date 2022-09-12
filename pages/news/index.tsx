@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareNodes } from "@fortawesome/free-solid-svg-icons";
 import Skeleton from "react-loading-skeleton";
 import { truncateString } from "../../src/helpers/stringFunctions";
+import { baseUrl } from "../../src/helpers/config";
 import styles from "../../src/styles/News.module.scss";
 
 type Data = {
@@ -28,7 +29,7 @@ const NewsPage = ({ data }: Props) => {
   // using CSR for fetching data
   // useEffect(() => {
   //   setLoading(true);
-  //   fetch(`http://localhost:3000/api/news`)
+  //   fetch(`${baseUrl}/api/news`)
   //     .then((res) => res.json())
   //     .then((data) => {
   //       setNewsData(data);
@@ -123,7 +124,7 @@ const NewsPage = ({ data }: Props) => {
 };
 
 export const getServerSideProps: GetServerSideProps<Props> = async () => {
-  const res = await fetch(`http://localhost:3000/api/news`);
+  const res = await fetch(`${baseUrl}/api/news`);
   const data = await res.json();
   return { props: { data } };
 };

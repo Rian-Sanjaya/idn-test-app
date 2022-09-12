@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import Skeleton from "react-loading-skeleton";
+import { baseUrl } from "../../src/helpers/config";
 import styles from "../../src/styles/Livestream.module.scss";
 
 type Data = {
@@ -18,7 +19,7 @@ const LivestreamPage = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:3000/api/livestream`)
+    fetch(`${baseUrl}/api/livestream`)
       .then((res) => res.json())
       .then((data) => {
         setLivestreamData(data);
